@@ -1,13 +1,1101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  font-size: 20px;
+  /* line-height: 1.5; */
+    /* padding: 5rem; */
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bouncing-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1.5s infinite;
+  z-index: 10;
 }
+
+/* LOGO OVERLAY ON HEADER IMAGE */
+.logo-overlay {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(80, 30, 76, 0.85); /* #501e4c at 85% opacity */
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-overlay-container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.back-link-overlay,
+.arrow-overlay {
+  background-color: rgba(80, 30, 76, 0.85); /* #501e4c at 85% opacity */
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.arrow-overlay {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+
+.logo-overlay img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+.app-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 0;
+  margin:0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+  width: 100%;
+
+}
+
+.flourish-block {
+  display: flex;
+  margin-bottom: 3rem;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.narrative {
+  width: 40%;
+  padding: 2rem;
+}
+
+.narrative section {
+  margin: 60vh 0;
+}
+
+/* Make the graphic sticky */
+.viewer {
+  width: 30%; /* reduced width for smaller graphic */
+  padding: 1rem; /* smaller padding */
+  position: sticky;
+  top: 4rem; /* below header */
+  align-self: flex-start;
+}
+
+.viewer iframe.flourish-embed-iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
+
+.daily-logo-link {
+  display: flex;           
+  flex-direction: column;   
+  justify-content: center; 
+  align-items: center;     
+  margin-top: 10px;    
+
+}
+
+.daily-logo-container{
+  margin:0px;    
+}
+
+
+
+@media (max-width: 768px) {
+.daily-logo {
+  width: 100%;
+  max-width: 300px; 
+}
+
+.daily-logo-container {
+  margin-bottom:10px;
+}
+
+header {
+  padding: 10px;
+}
+}
+
+/* ––––––––––––––––––––––FOR POLLING DASHBOARD  –––––––––––––––––––––––*/ 
+/* 
+:root {
+  --main-bg-color: #FAFAFA;
+}
+* {
+  box-sizing: border-box;
+} */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 10px; */
+  color: #501e4c;
+  background-color: #501e4c;
+  width: 100%;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #501e4c;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main-bg-color);
+}
+
+.header-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffff;
+}
+
+.header-image,
+.poll-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers horizontally */
+  align-items: center;
+  text-align: center;
+
+  padding:0;
+  position: relative;
+  /* margin-bottom: 2rem; */
+  
+}
+
+
+.header-image img {
+  width: 93%;
+  height: auto;
+  /* display: block; */
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 3%;
+  padding:0;
+}
+
+.header-image img.background-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+
+.logo-link {
+  padding-left: 30px;
+}
+
+.page-title {
+  padding-top: 20px;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  
+}
+
+.title-background {
+  background-color: #501e4c; /* Northwestern purple */
+  text-align: center;
+  padding: 0 0;
+  width: 100%;
+  position:sticky;
+}
+
+.page-title {
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  font-family: Georgia, serif;
+}
+
+.story-link {
+  color: #d1c5e0;
+  font-size: 1rem;
+  margin-top: 0;
+  display: block;
+  text-decoration: none;
+  justify-self: center;
+}
+
+.story-link:hover {
+  text-decoration: underline;
+}
+
+
+h1 {
+  font-size: 36px;
+  color: #FFF;
+  text-align: center;
+}
+
+.broad-topic-container {
+  display: flex;
+  width: fit-content; 
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  background-color: #501e4c;
+  padding: 1rem;
+  border-radius: 15px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+}
+
+.broad-topic-container button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-family: var(--body-font);
+}
+
+.broad-topic-container button:hover {
+  border: 2px solid #FFFFFF;
+}
+
+.broad-topic-container button.active {
+  font-family: Georgia, serif;
+  border: 2px solid #FFFFFF;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+.body-wrapper {
+  display: flex;
+  flex-direction: row; 
+  width: 100%;    
+  flex-wrap: wrap; 
+}
+
+.questions-and-dataviz {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: row;
+}
+
+.sidebar {
+  display:flex;
+  width: fit-content;
+  align-self:baseline;
+  min-width: 250px;
+  height: fit-content;
+  border-right: 2px solid #501e4c;
+  padding: 10px;
+  top: 350px;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: #ccc;
+
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.toggle-sidebar {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #501e4c;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.sidebar .specific-topic-button {
+  font-family: Georgia, serif;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: none;
+  color: #501e4c;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .specific-topic-button:hover {
+  background-color: #501e4c43;
+  border: 0.5px solid #501e4c;
+  text-decoration: underline;
+}
+
+.sidebar .specific-topic-button.active {
+  text-decoration: underline;
+  background-color: #501e4c43;
+  border: 0.5px solid #501e4c;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap; 
+  flex: 1;
+  width: 75%; 
+  min-height: 500px; 
+  padding-left: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  flex: 1;
+  /* width: 80%;  */
+  width:100%;
+  min-height: 500px; 
+  /* padding-left: 10px; */
+  margin: auto auto;
+  justify-content: center;
+  align-items: center
+}
+
+
+.poll-section {
+  display: none;
+  width: 90%;
+  background-color: #f9f9f9;
+ 
+}
+
+.poll-section.active {
+  display: block;
+
+}
+
+.poll-section iframe {
+  width: 70%;
+  height: 100vh;
+  border: none;
+  display: block;
+  align-self:center;
+}
+
+.all-dashboard-content {
+  display: flex;
+  width: auto;
+  height: 40%;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.article-card-section{
+
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+}
+
+.survey-card {
+  position: relative;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+  font-family: 'Playfair Display';
+  font-size: 1.5em;
+  height: 200px;
+  width: 265px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+}
+
+
+.sticky-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.daily-logo {
+  display: block;
+
+}
+
+.daily-logo img {
+  margin-top:5%;
+  max-width: 300px;
+  height: auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.more-stories-header{
+  justify-self: center;
+  margin-top:1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Style */
+@media (max-width: 768px) {
+  :root {
+      --main-bg-color: #FFFF;
+      overflow: auto;
+      flex-wrap: wrap;
+  }
+  body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+  }
+
+  header {
+      position: fixed; 
+      top: 0;
+      left: 0;
+      right: 0; 
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      color: #501e4c;
+      width: 100%;
+      }
+  
+  .daily-logo {
+      width: 50%;
+      align-self: center;
+      justify-self: center;
+      height: auto;
+      /* padding-top: 30px; */
+  }
+  .page-title {
+      text-align: center;
+      margin: 0;
+      padding: 10px 0;
+      font-size: 20px;
+  }
+
+  .main-content {
+      flex: 1;
+      width: 100%; 
+      padding-top: 100px;
+  }
+  .body-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  .broad-topic-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; 
+      gap: 5px;
+      padding: 0.5rem 0.5rem; 
+      width: 90%; 
+      margin: 20px auto;
+      top: 150px;
+      position:fixed;
+      align-self: center;
+  }
+  .broad-topic-container button {
+      background-color: transparent;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 5px;
+      color: #FFFFFF;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      font-family: var(--body-font);
+  }
+  .sidebar {
+      /* Hide sidebar by default */
+      display: none; 
+      background-color: #f4f4f4; 
+      position: fixed;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: fit-content; 
+      height: 100%;
+      overflow-y: auto; 
+      z-index: 1000;
+  }
+  .sidebar.active {
+      display: block;
+  }
+  
+  .poll-section {
+      width: 100%;
+      align-items: center;
+      flex: 1 1 100%;
+      overflow: auto;
+  }
+  
+  .flourish-embed {
+      width: 100%;
+      height: auto;
+  }
+  
+  /* Show toggle sidebar button on mobile */
+  /* Toggle Sidebar Button */
+  /* .toggle-sidebar {
+      position: fixed;
+      top: 1rem;
+      bottom:1rem;
+      left: 1rem;
+      height: 30px;
+      width: 40px;
+      background-color: #501e4c; 
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1100; 
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  } */
+
+/* Move the sidebar‐toggle button down to the bottom right for easier access */
+.toggle-sidebar {
+  top: auto !important;
+  bottom: 1rem !important;
+  right: 1rem !important;
+}
+
+.polling-dashboard-wrapper {
+  order: 999 !important;        
+  width: 100% !important;
+  margin-top: 1.5rem;
+}
+
+  /* Hamburger Icon for Toggle Button */
+  .toggle-sidebar::before {
+      font-size: 1.5rem;
+      color: white;
+  }
+  .questions-and-dataviz {
+      overflow-x: auto;
+  }
+  .all-dashboard-content {
+    padding-top: 175px;
+      width:100%;
+  }
+  /* Override poll header stickiness on mobile */
+  .poll-header {
+    position: static !important;
+    top: auto !important;
+  }
+
+  /* Make only the daily logo sticky */
+  .daily-logo-container {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+  }
+}
+
+.dashboard-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.flourish-embed {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+
+.dashboard-wrapper {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+footer {
+  margin-top:5%;
+  text-align: center;
+}
+
+.credits {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.logo-footer img {
+  max-width: 150px;
+  height: auto;
+  margin-top: 10px;
+}
+/* Enhanced mobile-first overrides */
+@media (max-width: 600px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    /* change this: */
+    width: 100%;          /* instead of 100vw */
+    overflow-x: hidden;   /* prevent any horizontal overflow */
+  }
+  /* Stack narrative and viewer vertically */
+  .flourish-block {
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Full-width narrative and viewer */
+  .narrative,
+  .viewer {
+    width: 100% !important;
+    position: static !important;
+    top: auto !important;
+    padding: 1rem !important;
+    margin: 1rem 0;
+  }
+
+  /* Responsive iframe height */
+  .viewer iframe.flourish-embed-iframe {
+    height: 100vh !important;
+  }
+
+  /* Ensure landing content and article cards wrap */
+  .landing-content,
+  .article-card-section {
+    width: 100% !important;
+    /* padding: 0 1rem; */
+    justify-content: center;
+    justify-items: center;
+    box-sizing: border-box;
+  }
+
+  /* Single-column card grid */
+  .card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem;
+  }
+
+  /* Center header text and reduce padding */
+  .app-header {
+    padding: 0;
+
+    /* padding: 0.75rem !important; */
+  }
+
+  /* Adjust Daily Logo size */
+  .daily-logo img {
+    max-width: 200px;
+  }
+  html, body {
+  overflow-x: hidden;
+}
+
+.broad-topic-container {
+  position: static !important;
+  top: auto !important;
+  width: 100% !important;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+/* 2) Stack sidebar + charts vertically */
+.questions-and-dataviz {
+  flex-direction: column !important;
+}
+
+/* 3) Let each poll section fill the width */
+.poll-section {
+  width: 100% !important;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* 4) Stretch the Flourish embeds */
+.flourish-embed {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.flourish-embed iframe {
+  width: 100% !important;
+  min-height : 100vh; /* or more, as you like */
+  height: 100vh !important;
+}
+
+
+}
+
+/* ---- Mobile toggle & pop-up sidebar ---- */
+@media (max-width: 600px) {
+  /* Show the toggle in bottom-right */
+  .toggle-sidebar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    background: #501e4c !important;
+    color: #fff !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 999px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+    z-index: 2000 !important;
+    font-size: 0.9rem !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide the sidebar off-canvas by default */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* When active, show it as a centered pop-up */
+  .sidebar.active {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    background: #fff !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+    z-index: 2001 !important;
+    overflow-y: auto !important;
+    max-height: 80vh !important;
+  }
+
+  /* Style the specific-topics buttons inside the pop-up */
+  .sidebar .specific-topic-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: left;
+    background: #f4f4f4;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #501e4c;
+  }
+  .sidebar .specific-topic-button.active {
+    background: #501e4c;
+    color: #fff;
+  }
+}
+/* make sure nothing in the header area is pushing in or down */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* strip out any margin that might’ve crept in on the header image or logo */
+.header-image,
+.daily-logo-container {
+  width: 100%;        /* full‐bleed container */
+  padding: 0;
+  margin: 0 auto;     /* auto‐center, but since width:100% it sits flush */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header-image {
+  margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
+  display: block;     /* removes any inline‐image whitespace */
+}
+
+.daily-logo img {
+  margin-top: 5%;
+  padding: 0;
+  display: block; }
+
+/* ensure your wrapper isn’t insetting everything */
+.dashboard-wrapper {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.intro-text{
+  line-height: 1.5;
+  margin-top:2rem;
+  justify-items: center;
+  padding-left: 25%;
+  padding-right: 25%;
+
+}
+
+/* 1) Make every major section share the same horizontal padding */
+.dashboard-wrapper > * {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2rem;    /* same 1rem either side */
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* 2) Center & wrap your article cards */
+.article-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+.article-card-section .card-grid {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 3) Ensure the dashboard comes before the footer */
+.polling-dashboard-wrapper {
+  order: 900;  /* somewhere under normal flow */
+
+  /* max-width: 100%;  or any width you want */
+  margin: 0 auto;    /* centers horizontally */
+  padding: 0 15px;   /* optional padding */
+}
+
+footer {
+  order: 1000; /* always last */
+  width: 100%;
+}
+
+/* 4) Mobile‐only: match margins on intro and dashboard to your flourishes */
+@media (max-width: 600px) {
+  .landing-content,
+  .flourish-block,
+  .article-card-section,
+  .polling-dashboard-wrapper {
+    padding: 0 1rem;
+    margin: 0 auto 2rem; /* bottom spacing */
+  }
+}
+.flourish-block {
+  display: flex;  
+  justify-content: center; /* center narrative + viewer */
+  align-items: flex-start; /* keep them top-aligned */
+  gap: 2rem;               /* spacing between the two panels */
+  margin-bottom: 3rem;
+}
+
+/* Make sure the panels themselves don’t carry any extra auto-margins */
+.narrative,
+.viewer {
+  /* margin: 0; */
+}
+h2 {
+  margin: 2rem 0 1rem;
+}
+h2 + p {
+  margin-top: 1rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+/*  */
+
+/*  */
+/* make the narrative fill the same vertical space as the viz */
+.flourish-block {
+  /* keep your existing row flex */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* stretch narrative to match viewer height and distribute its sections */
+
+
+/* kill the old big margins on each section */
+.narrative section {
+  margin: 0;
+}
+/* bump up line-height for narrative text */
+.narrative,
+.narrative p,
+.narrative h2,
+.narrative h3 {  
+  line-height: 1.5;
+}
+
+/* extra breathing room between narrative paragraphs */
+.narrative p {
+  margin-bottom: 1.8rem;  
+}
+
+/* if you still have <section> wrappers, space those out too */
+.narrative section {
+  margin-bottom: 2rem;    
+}
+
+/* optional: slightly increase font-size for the narrative */
+.narrative {
+  font-size: 1.05rem;    
+}
+
+
+/* MOBILE STYLES */
+@media (max-width: 600px) {
+  .logo-overlay {
+    padding: 0.5rem 1rem;
+    max-width: 95vw;
+    top: 3%; /* slightly closer to top on mobile */
+  }
+
+  .logo-overlay img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-overlay img {
+    max-width: 140px;
+  }
+}
+
+
+.scroll-arrow {
+  display: block;
+  margin: 10px auto 0 auto;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+
+.scroll-arrow-header {
+  position: absolute;
+  bottom: 30%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.scroll-arrow:hover {
+  color: #000;
+}
+
+/****/
+.header-image {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Bottom overlay container */
+.bottom-overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding: 0 1rem;
+  color: white;
+}
+
+/* Optional: style the arrow and link */
+.scroll-arrow-header {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.story-link {
+  color: white;
+  text-decoration: underline;
+}
+
